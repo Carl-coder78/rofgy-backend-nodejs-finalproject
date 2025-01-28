@@ -73,7 +73,8 @@ app.post('/register', async (req, res) => {
       const token = jwt.sign({ userId: newUser._id, username: newUser.username }, SECRET_KEY, { expiresIn: '1h' });
       req.session.token = token;
   
-      res.send({"message":`The user ${username}has been added`});
+      // Reemplazo de la respuesta JSON con redirección
+      res.redirect(`/index?username=${newUser.username}`);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -92,7 +93,8 @@ app.post('/login', async (req, res) => {
       const token = jwt.sign({ userId: user._id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
       req.session.token = token;
   
-      res.redirect({"mesage":`${user.username} has logged in`});
+      // Reemplazo de la respuesta JSON con redirección
+      res.redirect(`/index?username=${user.username}`);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
