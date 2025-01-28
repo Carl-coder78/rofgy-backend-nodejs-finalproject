@@ -17,6 +17,7 @@ eggs/
 lib/
 lib64/
 parts/
+node_modules/
 sdist/
 var/
 wheels/
@@ -127,3 +128,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+node_modules/
