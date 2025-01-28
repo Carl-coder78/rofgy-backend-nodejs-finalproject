@@ -11,7 +11,7 @@ const SECRET_KEY = 'your_secret_key';
 mongoose.set('strictQuery', false);
 
 // Cambiar la contraseña y el host de MongoDB con los datos proporcionados
-const uri = "mongodb://root:lGaHnehPGxSnr1mIjDuGbTOA@172.21.13.204:27017";
+const uri = "mongodb://mongodb:27017";
 mongoose.connect(uri, { 'dbName': 'SocialDB' });
 
 const User = mongoose.model('User', { username: String, email: String, password: String });
